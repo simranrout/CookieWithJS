@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <script type="text/javascript">
+        function createCookie(){
+            
+            document.cookie = "name="+document.getElementById("name").value
+            document.cookie = "age="+document.getElementById("age").value 
+            document.cookie = "email="+document.getElementById("email").value
+           
+            
+        }
+        function getCookie(){
+         var value = document.cookie.split(";")
+            for (i = 0 ; i <value.length ; i++){
+                var cookie = value[i].split("=")
+                
+                if (cookie[0].trim() == "name"){
+                    document.getElementById("name").value = cookie[1];
+                    
+                }
+               else if (cookie[0].trim() == "age"){
+                
+                document.getElementById("age").value = cookie[1];
+                    
+                }
+                else if(cookie[0].trim() == "email"){
+                    document.getElementById("email").value = cookie[1];
+                    
+                }
+            }
+            
+        }
+        </script>
+    </head>
+    <body>
+     Name   <input type="text" id="name" placeholder="enter your name" value=""><br>
+     <br>
+     Age  <input type="number" id="age" placeholder="enter your age"><br>
+     <br>
+     Email   <input type="email" id="email" placeholder="enter your mail id">
+     <br>
+     <br><button type="submit" onclick="createCookie()">submit</button>
+     <button onclick="getCookie()">Getcookie</button>
+    </body>
+</html>
